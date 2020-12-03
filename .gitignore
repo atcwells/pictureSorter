@@ -1,0 +1,6 @@
+node_modules/
+destination/
+pictures/
+log.log
+.idea/
+.DS_Store
