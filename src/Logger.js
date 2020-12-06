@@ -13,5 +13,4 @@ const opts = {
 const manager = SimpleNodeLogger.createLogManager();
 manager.createConsoleAppender(opts);
 const log = SimpleNodeLogger.createRollingFileLogger(opts);
-log.setLevel('debug');
 export {log};

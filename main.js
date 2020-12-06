@@ -11,6 +11,7 @@ Object.keys(process.env).forEach(envVar => {
     if (settings.hasOwnProperty(envVar.toLowerCase()))
         settings[envVar.toLowerCase()] = process.env[envVar];
 });
+log.setLevel(settings.log_level || 'debug');
 log.info(settings);
 
 const {schedule} = cron;

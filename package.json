@@ -10,7 +10,8 @@
     "source_folder": "./pictures",
     "destination_folder": "./destination",
     "cron_schedule": "* * * * *",
-    "mode": "test"
+    "mode": "test",
+    "log_level": "debug"
   },
   "author": "",
   "license": "ISC",
