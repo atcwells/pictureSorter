@@ -3,7 +3,7 @@ import shell from "shelljs";
 import exif from "exif";
 import {log} from "./Logger.js";
 
-const {pwd, mkdir, cp, mv, ls} = shell;
+const {mkdir, cp, mv, ls} = shell;
 shell.config.silent = false;
 const {basename} = path.posix;
 const {ExifImage} = exif;
@@ -16,9 +16,9 @@ export class Sorter {
 
     constructor({source_folder, destination_folder}, database) {
         this.database = database;
-        this.sourceFolder = `${pwd()}${source_folder}`;
-        this.movedFilesFolder = `${pwd()}${source_folder}/moved_files`;
-        this.destinationFolder = `${pwd()}${destination_folder}`;
+        this.sourceFolder = `${source_folder}`;
+        this.movedFilesFolder = `${source_folder}/moved_files`;
+        this.destinationFolder = `${destination_folder}`;
         mkdir('-p', this.movedFilesFolder);
     }
 

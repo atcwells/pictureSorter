@@ -4,12 +4,13 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "startO=,  M": "node --experimental-json-modules main.js"
+    "start": "node --experimental-json-modules main.js"
   },
   "settings": {
-    "source_folder": "/pictures",
-    "destination_folder": "/destination",
-    "cron_schedule": "* * * * *"
+    "source_folder": "./pictures",
+    "destination_folder": "./destination",
+    "cron_schedule": "* * * * *",
+    "mode": "test"
   },
   "author": "",
   "license": "ISC",
