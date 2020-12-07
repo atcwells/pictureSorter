@@ -1,0 +1,17 @@
+{
+  "development": {
+    "dialect": "sqlite",
+    "storage": "./database.sqlite3",
+    "destroy_db": true
+  },
+  "test": {
+    "dialect": "sqlite",
+    "storage": ":memory",
+    "destroy_db": true
+  },
+  "production": {
+    "dialect": "sqlite",
+    "storage": "./database.sqlite3",
+    "destroy_db": false
+  }
+}
