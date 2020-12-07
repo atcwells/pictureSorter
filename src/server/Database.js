@@ -1,4 +1,4 @@
-import setup from '../models/index.js'; // new require for db object
+import setup from '../../models/index.js'; // new require for db object
 
 let database = {
     files: {}

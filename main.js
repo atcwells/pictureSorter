@@ -1,6 +1,6 @@
-import {Sorter} from "./src/Sorter.js"
-import DatabaseSetup from "./src/Database.js";
-import {log} from "./src/Logger.js";
+import {Sorter} from "./src/server/Sorter.js"
+import DatabaseSetup from "./src/server/Database.js";
+import {log} from "./src/server/Logger.js";
 
 import options from "./package.json"
 import cron from "node-cron"
