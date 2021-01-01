@@ -1,10 +1,11 @@
 import {Sorter} from "./src/server/Sorter.js"
-import DatabaseSetup from "./src/server/Database.js";
+import DatabaseSetup from "./src/server/database/Database.js";
 import {log} from "./src/server/Logger.js";
 
 import options from "./package.json"
 import cron from "node-cron"
 import shell from "shelljs";
+import Server from "./src/server/Server.js";
 
 (async () => {
 
@@ -21,8 +22,8 @@ import shell from "shelljs";
     const {cron_schedule} = options.settings;
 
     const Database = await DatabaseSetup();
-    const database = new Database(options.settings);
-    const sorter = new Sorter(options.settings, database);
+    const sorter = new Sorter(options.settings, Database);
+    const server = await Server(Database);
 
     let sort = ({doMove}) => {
         log.debug(`Beginning new sort operation at ${sorter.sourceFolder}`);
@@ -42,6 +43,7 @@ import shell from "shelljs";
         });
     };
 
+    /*
     if (settings.mode === 'run') {
         sort({
             doMove: true
@@ -54,7 +56,7 @@ import shell from "shelljs";
                 doMove: true
             })
         });
-    }
+    }*/
 
     if (settings.mode === 'test') {
         sort({

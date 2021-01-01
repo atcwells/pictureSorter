@@ -1,0 +1,39 @@
+{
+    "name": "plus_minus.vue_app",
+    "label": "Plus Minus",
+    "template": "<div>\n    <div v-for=\"count in plus_minus_count\">\n        <p>{{ count.count }}</p>\n        <p>\n            <button class=\"ui primary icon button\"\n                    @click=\"plus_minus_count__counter_increment(count)\">\n                <i class=\"plus icon\"></i>\n            </button>\n            <button class=\"ui icon button\"\n                    @click=\"plus_minus_count__counter_decrement(count)\">\n                <i class=\"minus icon\"></i>\n            </button>\n        </p>\n    </div>\n</div>\n",
+    "default_data": [
+        {
+            "collection": "95ff8230-b539-43f0-bd38-66a9a3702a59",
+            "encoded_query": ""
+        }
+    ],
+    "style": [
+        {
+            "type": "Element",
+            "tagName": "style",
+            "attributes": {},
+            "children": [
+                {
+                    "type": "Text",
+                    "content": "\n    div {\n        background-color: red;\n    }\n"
+                }
+            ]
+        }
+    ],
+    "script": "{\n    data: () => {\n        return {}\n    }\n}",
+    "api": [
+        {
+            "unique_id": "18407713-6167-48e1-ac70-be5f8e4837fc"
+        }
+    ],
+    "unique_id": "79964506-eef6-49dc-94a9-47f3f3d6a236",
+    "_metadata": {
+        "created_on": 1538568142931,
+        "created_by": "admin",
+        "updated_on": 1539544296843,
+        "updated_by": "admin",
+        "collection_name": "app_user_interface",
+        "data_action": "update"
+    }
+}

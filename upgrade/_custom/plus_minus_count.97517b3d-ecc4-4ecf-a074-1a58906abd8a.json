@@ -1,0 +1,13 @@
+{
+    "count": 3,
+    "unique_id": "97517b3d-ecc4-4ecf-a074-1a58906abd8a",
+    "_metadata": {
+        "collection_name": "plus_minus_count",
+        "created_on": 1582582117424,
+        "created_by": "admin",
+        "updated_on": 1582582288469,
+        "updated_by": "admin",
+        "indexes": {},
+        "data_action": "update"
+    }
+}

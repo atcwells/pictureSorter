@@ -1,0 +1,27 @@
+{
+    "name": "app_user_interface.vue_app",
+    "label": "App User Interface Designer",
+    "template": "<div>\n    <h5>Ace editor for Vue.js2.0 Components</h5>\n    <select @input=\"setCategoryId($event.target.value)\">\n        <option disabled selected=\"true\" value=\"\">Please select one</option>\n        <option v-for=\"appUI in app_user_interface\" v-bind:value=\"appUI.unique_id\">{{appUI.label}}</option>\n    </select>\n    <h2 v-show=\"selected_app_user_interface.template\">Template</h2>\n    <div style=\"height: 300px\" >\n        <div v-show=\"selected_app_user_interface.template\"\n             id=\"editor_location\"\n             style=\"width: 100%; height: 100%;\"\n             :content=\"selected_app_user_interface.template\"></div>\n    </div>\n    <br />\n    <h2 v-show=\"selected_app_user_interface.script\">Script</h2>\n    <div style=\"height: 300px\">\n        <div v-show=\"selected_app_user_interface.script\"\n             id=\"editor_script_location\"\n             style=\"width: 100%; height: 100%;\"\n             :content=\"selected_app_user_interface.script\"></div>\n    </div>\n    <button v-show=\"selected_app_user_interface.template\"\n            class=\"ui primary icon button\"\n            v-bind:disabled=\"!selected_app_user_interface.template\"\n            @click=\"core_app_user_interface__save(selected_app_user_interface)\">\n        <i class=\"plus icon\"></i>\n    </button>\n</div>\n",
+    "default_data": [
+        {
+            "collection": "e0b80ffa-c920-4e91-b8aa-8d9833241745",
+            "encoded_query": ""
+        }
+    ],
+    "style": [],
+    "script": "{\n    data() {\n        return {\n            editors: [{\n                editor: Object,\n                id: 'editor_location',\n                language: 'html',\n                theme: 'github',\n                field: 'template'\n            }, {\n                editor: Object,\n                id: 'editor_script_location',\n                language: 'javascript',\n                theme: 'github',\n                field: 'script'\n            }],\n            selected_app_user_interface: {}\n        }\n    },\n    mounted() {\n        const lang = this.lang || 'javascript';\n        const theme = this.theme || 'github';\n        ace.config.set('basePath', '/resources');\n        ace.config.set('modePath', '/resources');\n        ace.config.set('themePath', '/resources');\n        this.editors.forEach((editorDefinition) => {\n            editorDefinition.editor = ace.edit(editorDefinition.id);\n            editorDefinition.editor.getSession().setMode(`ace/mode/${editorDefinition.language}`);\n            editorDefinition.editor.setTheme(`ace/theme/${editorDefinition.theme}`);\n            editorDefinition.editor.on('change', () => {\n                this.selected_app_user_interface[editorDefinition.field] = editorDefinition.editor.getValue();\n            });\n        })\n    },\n    methods: {\n        setCategoryId(value) {\n            this.selected_app_user_interface = this.$store.state.records.app_user_interface[value];\n            this.editors.forEach((editorDefinition) => editorDefinition.editor.setValue(this.selected_app_user_interface[editorDefinition.field], 1));\n        }\n    }\n}",
+    "api": [
+        {
+            "unique_id": "1ca7cbb2-a8c5-4871-b6fb-ba0a0fed4a46"
+        }
+    ],
+    "unique_id": "bfb279cb-cf2e-4a86-95cd-d2d25af74005",
+    "_metadata": {
+        "created_on": 1542213005573,
+        "created_by": "admin",
+        "updated_on": 1542213031511,
+        "updated_by": "admin",
+        "collection_name": "app_user_interface",
+        "data_action": "update"
+    }
+}
